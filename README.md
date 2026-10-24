@@ -35,12 +35,12 @@
 
 ## 使用
 
-1. 运行 `pptglass.exe`（需要同目录下的 `DSEG7.ttf`、`alarm1.wav`、`alarm2.wav`）
-2. 打开你的 PPT / WPS 演示文稿
-3. **双击屏幕右上角的时间条**——计时开始，放映同时启动
-4. 讲完按 ESC 退出放映，计时自动结束
+- **单文件版**：从 [Releases](https://github.com/jdstkxx/PPTGlass/releases) 下载 `PPTGlass-v1.0.0.zip`（或单独的 `pptglass.exe`），运行即可——字体与提示音已内嵌，首次运行自动解包到临时目录
+- **源码运行**：需要 AutoHotkey 1.1；`src/pptglass.ahk` 同目录放置 `fonts/DSEG7.ttf` 与 `sounds/*.wav`（ini 可改路径）
+- 打开你的 PPT / WPS 演示文稿，**双击屏幕右上角的时间条**——计时开始，放映同时启动
+- 讲完按 ESC 退出放映，计时自动结束
 
-所有配置保存在同目录 `ppttimer_new.ini`，可直接编辑（含放映窗口类名、进程名、快捷键、透明度）。
+所有配置保存在 `ppttimer_new.ini`（脚本目录），可直接编辑（含放映窗口类名、进程名、快捷键、透明度）。
 
 ## 作者
 
