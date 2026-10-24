@@ -35,7 +35,7 @@
 
 ## 使用
 
-- **单文件版**：从 [Releases](https://github.com/jdstkxx/PPTGlass/releases) 下载 `PPTGlass-v1.0.0.zip`（或单独的 `pptglass.exe`），运行即可——字体与提示音已内嵌，首次运行自动解包到临时目录
+- **单文件版**：从 [Releases](https://github.com/jdstkxx/PPTGlass/releases) 下载 `PPTGlass-v1.0.0.zip`（），运行即可——字体与提示音已内嵌，首次运行自动解包到临时目录
 - **源码运行**：需要 AutoHotkey 1.1；`src/pptglass.ahk` 同目录放置 `fonts/DSEG7.ttf` 与 `sounds/*.wav`（ini 可改路径）
 - 打开你的 PPT / WPS 演示文稿，**双击屏幕右上角的时间条**——计时开始，放映同时启动
 - 讲完按 ESC 退出放映，计时自动结束
