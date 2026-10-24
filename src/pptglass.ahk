@@ -8,6 +8,10 @@
 ;@Ahk2Exe-SetVersion 1.0.0
 ;@Ahk2Exe-SetDescription PPT沙漏
 ;@Ahk2Exe-SetCopyright Copyright (c) 2026 PPT沙漏 pptglass
+; --- embedded resources (unpacked at first run) ---
+FileInstall, DSEG7.ttf, %A_Temp%\pptglass_DSEG7.ttf, 1
+FileInstall, alarm1.wav, %A_Temp%\pptglass_alarm1.wav, 1
+FileInstall, alarm2.wav, %A_Temp%\pptglass_alarm2.wav, 1
 #SingleInstance force
 #NoEnv
 SetBatchLines -1
@@ -74,9 +78,9 @@ DllCall("gdiplus\GdipCreateFont", "ptr", famBig, "float", Round(38 * ptS), "int"
 DllCall("gdiplus\GdipCreateFont", "ptr", famCap, "float", Round(9.5 * ptS), "int", 0, "int", 2, "ptr*", fCap := 0)
 DllCall("gdiplus\GdipCreateFont", "ptr", famCap, "float", Round(12 * ptS), "int", 1, "int", 2, "ptr*", fBtn := 0)
 famLed := 0
-if FileExist(A_ScriptDir "\DSEG7.ttf") {
+if FileExist(A_Temp "\pptglass_DSEG7.ttf") {
     DllCall("gdiplus\GdipNewPrivateFontCollection", "ptr*", fcol := 0)
-    if (DllCall("gdiplus\GdipPrivateAddFontFile", "ptr", fcol, "wstr", A_ScriptDir "\DSEG7.ttf") = 0) {
+    if (DllCall("gdiplus\GdipPrivateAddFontFile", "ptr", fcol, "wstr", A_Temp "\pptglass_DSEG7.ttf") = 0) {
         VarSetCapacity(famArr, 8, 0)
         if (DllCall("gdiplus\GdipGetFontCollectionFamilyList", "ptr", fcol, "int", 1, "ptr", &famArr, "int*", nFound := 0) = 0 && nFound >= 1)
             famLed := NumGet(famArr, 0, "ptr")
